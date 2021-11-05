@@ -58,10 +58,10 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("universe.jpeg");
+const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
-const arekTexture = new THREE.TextureLoader().load("our photo.jpg");
+const arekTexture = new THREE.TextureLoader().load("./pictures/our photo.jpg");
 
 const arek = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -69,7 +69,9 @@ const arek = new THREE.Mesh(
 );
 scene.add(arek);
 
-const jupiterTexture = new THREE.TextureLoader().load("jupiter.jpeg");
+const jupiterTexture = new THREE.TextureLoader().load(
+  "./pictures/jupiter.jpeg"
+);
 const jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({
