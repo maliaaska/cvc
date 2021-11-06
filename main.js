@@ -19,7 +19,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(150);
 
 renderer.render(scene, camera);
 
@@ -38,8 +38,8 @@ const ambientLight = new THREE.AmbientLight(0xfff48b);
 scene.add(pointLight, ambientLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper);
+// const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(lightHelper /*gridHelper*/);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -81,7 +81,7 @@ const jupiter = new THREE.Mesh(
 
 scene.add(jupiter);
 
-jupiter.position.z = 30;
+jupiter.position.z = 15;
 jupiter.position.setX(-10);
 
 function moveCamera() {
@@ -93,8 +93,8 @@ function moveCamera() {
   arek.rotation.y += 0.01;
   arek.rotation.z += 0.01;
 
-  camera.position.z = t * -0.01;
-  camera.position.x = t * -0.0002;
+  camera.position.z = t * -0.022;
+  camera.position.x = t * -0.001;
   camera.position.y = t * -0.0002;
 }
 
