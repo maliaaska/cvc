@@ -6,10 +6,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const scene = new THREE.Scene(); // kind of container that holds all objects cameras and lights. scene == container
 
 const camera = new THREE.PerspectiveCamera(
-  75,
+  55,
   window.innerWidth / window.innerHeight,
   0.1,
-  1000
+  2000
 );
 // first argument is a field view, second argument aspect ratio
 
@@ -19,7 +19,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(150);
+camera.position.setZ(15);
 
 renderer.render(scene, camera);
 
@@ -37,9 +37,9 @@ const ambientLight = new THREE.AmbientLight(0xfff48b);
 
 scene.add(pointLight, ambientLight);
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-// const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper /*gridHelper*/);
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+// // const gridHelper = new THREE.GridHelper(200, 50);
+// scene.add(lightHelper /*gridHelper*/);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -92,8 +92,9 @@ function moveCamera() {
 
   arek.rotation.y += 0.01;
   arek.rotation.z += 0.01;
+  camera.position.setY(75);
 
-  camera.position.z = t * -0.022;
+  camera.position.z = t * -0.03;
   camera.position.x = t * -0.001;
   camera.position.y = t * -0.0002;
 }

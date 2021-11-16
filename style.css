@@ -103,7 +103,7 @@ canvas {
       font-style: normal;
     }
     main {
-      width: 110%;
+      width: 100%;
       color: white;
       z-index: 99;
       position: absolute;
