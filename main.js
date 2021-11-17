@@ -6,7 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const scene = new THREE.Scene(); // kind of container that holds all objects cameras and lights. scene == container
 
 const camera = new THREE.PerspectiveCamera(
-  55,
+  130,
   window.innerWidth / window.innerHeight,
   0.1,
   2000
@@ -23,9 +23,9 @@ camera.position.setZ(15);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const geometry = new THREE.TorusGeometry(8, 3, 16, 400);
 const material = new THREE.MeshStandardMaterial({
-  color: 0xff6347,
+  color: 0x49ef4,
 });
 const torus = new THREE.Mesh(geometry, material);
 scene.add(torus);
@@ -69,6 +69,18 @@ const arek = new THREE.Mesh(
 );
 scene.add(arek);
 
+const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
+
+const js = new THREE.Mesh(
+  new THREE.BoxGeometry(4, 4, 4),
+  new THREE.MeshBasicMaterial({ map: JSTexture })
+);
+scene.add(js);
+
+js.position.z = 10;
+js.position.setX(20);
+js.position.setY(15);
+
 const jupiterTexture = new THREE.TextureLoader().load(
   "./pictures/jupiter.jpeg"
 );
@@ -107,6 +119,14 @@ function animate() {
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.005;
   torus.rotation.z += 0.01;
+
+  js.rotation.x += 0.01;
+  js.rotation.y += 0.003;
+  js.rotation.z += 0.01;
+
+  jupiter.rotation.x += 0.02;
+  jupiter.rotation.y += 0.003;
+  jupiter.rotation.z += 0.01;
 
   renderer.render(scene, camera);
 }
