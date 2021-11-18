@@ -61,7 +61,7 @@ Array(200).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
-const arekTexture = new THREE.TextureLoader().load("./pictures/our photo.jpg");
+const arekTexture = new THREE.TextureLoader().load("./pictures/profile.jpg");
 
 const arek = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -81,9 +81,7 @@ js.position.z = 10;
 js.position.setX(20);
 js.position.setY(15);
 
-const jupiterTexture = new THREE.TextureLoader().load(
-  "./pictures/jupiter.jpeg"
-);
+const jupiterTexture = new THREE.TextureLoader().load("./pictures/react.jpeg");
 const jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({

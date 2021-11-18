@@ -71,7 +71,7 @@ canvas {
   blockquote p {
     color: black;
     background-color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     display: inline;
     line-height: 1;
   }
@@ -91,7 +91,15 @@ canvas {
     width: 30px;
   }
   .infData {
-    font-size: 20px;    
+    margin-top: 3em;
+    display: grid; 
+    grid-template-columns: 10% 40%;  
+    align-items: center;
+
+  }
+  .infData p {
+    font-size: 1em;
+    font-weight: 100;
   }
   @media only screen and (max-width: 738px) {
     .description {
