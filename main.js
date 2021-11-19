@@ -63,10 +63,12 @@ scene.background = spaceTexture;
 
 const arekTexture = new THREE.TextureLoader().load("./pictures/profile.jpg");
 
-const arek = new THREE.Mesh(
-  new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: arekTexture })
-);
+async function arek() {
+  await new THREE.Mesh(
+    new THREE.BoxGeometry(3, 3, 3),
+    new THREE.MeshBasicMaterial({ map: arekTexture })
+  );
+}
 scene.add(arek);
 
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
