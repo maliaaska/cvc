@@ -68,7 +68,9 @@ async function loadArek() {
     new THREE.BoxGeometry(3, 3, 3),
     new THREE.MeshBasicMaterial({ map: arekTexture })
   );
+  console.log("before adding arek to sceen");
   scene.add(arek);
+  console.log("after");
 }
 loadArek();
 
