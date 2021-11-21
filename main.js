@@ -73,7 +73,7 @@ async function loadArek() {
   console.log("after");
 }
 loadArek();
-
+console.log("after loadArek");
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
 
 const js = new THREE.Mesh(
