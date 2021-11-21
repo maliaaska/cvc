@@ -66,6 +66,7 @@ const arekTexture = new THREE.TextureLoader().load("./pictures/profile.jpg");
 async function loadArek() {
   const arek = await new THREE.Mesh(
     new THREE.BoxGeometry(3, 3, 3),
+    console.log(arekTexture),
     new THREE.MeshBasicMaterial({ map: arekTexture })
   );
   console.log("before adding arek to sceen");
