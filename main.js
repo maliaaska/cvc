@@ -50,28 +50,33 @@ function addStar() {
 
   const [x, y, z] = Array(3)
     .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(100));
+    .map(() => THREE.MathUtils.randFloatSpread(200));
 
   star.position.set(x, y, z);
   scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
+Array(500).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
+const err = (message) => {
+  console.log("texture loaded");
+};
+const arekTexture = new THREE.TextureLoader().load(
+  "./pictures/profile.jpg",
+  err
+);
 
-async function loadArek() {
-  const arekTexture = await new THREE.TextureLoader().load(
-    "./pictures/profile.jpg"
-  );
-  const arek = await new THREE.Mesh(
-    new THREE.BoxGeometry(3, 3, 3),
-    new THREE.MeshBasicMaterial({ map: arekTexture })
-  );
-  scene.add(arek);
-}
-loadArek();
+const arek = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: arekTexture }),
+  setTimeout(() => {
+    console.log("timeout set up");
+    scene.add(arek);
+  }, 3000)
+);
+
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
 
 const js = new THREE.Mesh(
