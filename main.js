@@ -2,6 +2,7 @@ import "./style.css";
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Texture } from "three";
 
 const scene = new THREE.Scene(); // kind of container that holds all objects cameras and lights. scene == container
 
@@ -63,20 +64,20 @@ scene.background = spaceTexture;
 const err = (message) => {
   console.log("texture loaded");
 };
-const arekTexture = new THREE.TextureLoader().load(
-  "./pictures/profile.jpg",
-  err
-);
+
+const arekTexture = new THREE.TextureLoader().load("./pictures/profile.jpg");
 
 const arek = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: arekTexture }),
-  setTimeout(() => {
-    console.log("timeout set up");
-    scene.add(arek);
-  }, 3000)
+  console.log("mapping before arekTexture loaded"),
+  console.log(arekTexture)
 );
-
+// scene.add(arek);
+setTimeout(() => {
+  scene.add(arek);
+  console.log(arekTexture);
+}, 3000);
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
 
 const js = new THREE.Mesh(
