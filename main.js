@@ -63,6 +63,7 @@ const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
 const arekTexture = new THREE.TextureLoader().load("./profile.jpg");
+arekTexture.flipY = false;
 
 const arek = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
