@@ -1,8 +1,8 @@
+// @ts-nocheck
 import "./style.css";
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { Texture } from "three";
 
 const scene = new THREE.Scene(); // kind of container that holds all objects cameras and lights. scene == container
 
@@ -14,7 +14,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 // first argument is a field view, second argument aspect ratio
 
-const renderer = new THREE.WebGLRenderer({
+const renderer = new THREE.WebGL1Renderer({
   canvas: document.querySelector("#bg"),
 });
 
@@ -63,7 +63,6 @@ const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
 const profileTexture = new THREE.TextureLoader().load("profile.png");
-
 const profile = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: profileTexture }),
