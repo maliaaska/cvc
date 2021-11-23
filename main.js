@@ -62,7 +62,7 @@ Array(500).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
-const profileTexture = new THREE.TextureLoader().load("/profile.png");
+const profileTexture = new THREE.TextureLoader().load("profile.png");
 
 const profile = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
