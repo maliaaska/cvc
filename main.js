@@ -61,23 +61,18 @@ Array(500).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
-const err = (message) => {
-  console.log("texture loaded");
-};
 
-const arekTexture = new THREE.TextureLoader().load("./pictures/profile.jpg");
+const arekTexture = new THREE.TextureLoader().load("./profile.jpg");
 
 const arek = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: arekTexture }),
-  console.log("mapping before arekTexture loaded"),
+  console.log("loaded as 2"),
   console.log(arekTexture)
 );
-// scene.add(arek);
-setTimeout(() => {
-  scene.add(arek);
-  console.log(arekTexture);
-}, 3000);
+
+scene.add(arek);
+
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
 
 const js = new THREE.Mesh(
