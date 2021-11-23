@@ -62,17 +62,16 @@ Array(500).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
 scene.background = spaceTexture;
 
-const arekTexture = new THREE.TextureLoader().load("./profile.jpg");
-arekTexture.flipY = false;
+const profileTexture = new THREE.TextureLoader().load("./profile.png");
 
-const arek = new THREE.Mesh(
+const profile = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: arekTexture }),
+  new THREE.MeshBasicMaterial({ map: profileTexture }),
   console.log("loaded as 2"),
-  console.log(arekTexture)
+  console.log(profileTexture)
 );
 
-scene.add(arek);
+scene.add(profile);
 
 const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
 
@@ -105,8 +104,8 @@ function moveCamera() {
   jupiter.rotation.y += 0.075;
   jupiter.rotation.z += 0.05;
 
-  arek.rotation.y += 0.01;
-  arek.rotation.z += 0.01;
+  profile.rotation.y += 0.01;
+  profile.rotation.z += 0.01;
   camera.position.setY(75);
 
   camera.position.z = t * -0.03;
