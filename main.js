@@ -59,20 +59,18 @@ function addStar() {
 
 Array(500).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("./pictures/universe.jpeg");
+const spaceTexture = new THREE.TextureLoader().load("/universe.jpeg");
 scene.background = spaceTexture;
 
-const profileTexture = new THREE.TextureLoader().load("profile.png");
+const profileTexture = new THREE.TextureLoader().load("/profile.png");
 const profile = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: profileTexture }),
-  console.log("loaded as 2"),
-  console.log(profileTexture)
+  new THREE.MeshBasicMaterial({ map: profileTexture })
 );
 
 scene.add(profile);
 
-const JSTexture = new THREE.TextureLoader().load("./pictures/js.png");
+const JSTexture = new THREE.TextureLoader().load("/js.png");
 
 const js = new THREE.Mesh(
   new THREE.BoxGeometry(4, 4, 4),
@@ -84,7 +82,7 @@ js.position.z = 10;
 js.position.setX(20);
 js.position.setY(15);
 
-const jupiterTexture = new THREE.TextureLoader().load("./pictures/react.jpeg");
+const jupiterTexture = new THREE.TextureLoader().load("react.jpeg");
 const jupiter = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({
